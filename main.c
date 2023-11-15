@@ -20,10 +20,25 @@ int main(void)
 		
 		if (num_chars == -1)
 		{
-			perror("getline"); 
-			printf("Exiting <simple_shell>$ ......\n");
-			free(buffer); /*free memory before returning*/
-			return (-1);
+			/*check for end of file (Ctrl+D)*/
+			if (feof(stdin))
+			{	
+				printf("Exiting <simple_shell>$ ......\n");
+				free(buffer); /*free memory before returning*/
+				return (0);
+			}
+			/* handle other error*/
+			else
+			{
+				perror("getline");
+				free(buffer);
+				return (-1);
+			}
+		}
+		/*remove the newline character from the command*/
+		if (buffer[num_chars -1] == '\n')
+		{
+			buffer[num_chars -1] = '\0';
 		}
 
 		printf("%s\n", buffer);
