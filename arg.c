@@ -8,11 +8,11 @@
  */
 int main(int ac, char **av)
 {
-	ac (void);
+        ac (void);
 
-	while (av != NULL)
-	{
-		printf("%s\n", *av);
-	}
-	return (0);
+        while (av != NULL)
+        {
+                printf("%s\n", *av);
+        }
+        return (0);
 }
