@@ -8,11 +8,7 @@
 
 int main(void)
 {
-	int number;
-
-	printf("Enter the number: ");
-	scanf("%d", &number);
-
+	int number = 20;
 	int count = 1;
 
 	while (count <= 12)
