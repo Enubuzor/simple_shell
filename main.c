@@ -20,6 +20,7 @@ int main(void)
 		
 		if (num_chars == -1)
 		{
+			perror("getline"); 
 			printf("Exiting <simple_shell>$ ......\n");
 			free(buffer); /*free memory before returning*/
 			return (-1);
