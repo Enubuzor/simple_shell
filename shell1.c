@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 		else if (pid == 0)
 		{
 			/* using execve to execute command*/
-			if (execve(buffer, (char *[])[buffer, NULL], NULL) == -1)
+			if (execve(buffer, (char *[]){buffer, NULL}, NULL) == -1)
 			{
 				perror("execve failed");
 				exit(EXIT_FAILURE);
