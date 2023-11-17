@@ -8,13 +8,19 @@
  */
 int main(void)
 {
-    char *argv[] = {"/bin/ls", "-l", "/usr/", NULL};
+	char *argv[] = {"ls", "-l", NULL};
+	char *envv[] = {"NULL"};
 
-    printf("Before execve\n");
-    if (execve(argv[0], argv, NULL) == -1)
-    {
-        perror("Error:");
-    }
-    printf("After execve\n");
-    return (0);
+	printf("Before execve\n");
+
+	if (execve("/usr/bin/ls", argv, envv) == -1)
+	{
+		perror("Error:");
+		printf("execve failed\n");
+		return (1);
+	}
+
+	printf("After execve\n");
+
+	return (0);
 }

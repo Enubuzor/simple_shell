@@ -9,5 +9,7 @@
 #include <sys/types.h>
 
 int main(int argc, char *argv[]);
+/*function prototype for the command reading function*/
+char *readcommand(void);
 
 #endif /* MAIN_H */
